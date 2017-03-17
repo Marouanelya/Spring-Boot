@@ -51,7 +51,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
         </div><!--/.nav-collapse -->
     </div>
 </div>
@@ -59,29 +58,37 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br/> All you get is this text and a
-            mostly barebones HTML document.</p>
-    </div>
-
-    <form class="form-horizontal" th:action="@{/logout}" method="POST">
-            <input type="submit" value="Logout" />
-    </form>
-
-    <div class="starter-template">
-        <form action="/share" method="post" role="form" >
-            <div class="form-group">
-                <input type="text" class="form-control" name="content" id="" placeholder="Exprimez-vous"/>
-            </div>
-            <button type="submit" class="btn btn-primary">Share</button>
-        </form>
-    </div>
-
-    <div class="row feed" th:each="post: ${posts}">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <p th:text="${post.getContent()}"></p>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <form class="form-horizontal" th:action="@{/login}" method="POST">
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="">Login</legend>
+                            </div>
+                            <div class="control-group">
+                                <!-- Username -->
+                                <label class="control-label"  for="username">Username</label>
+                                <div class="controls">
+                                    <input type="text" id="username" name="username" placeholder="" class="input-xlarge"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="password">Password</label>
+                                <div class="controls">
+                                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="control-group">
+                                <!-- Button -->
+                                <div class="controls">
+                                    <button class="btn btn-success">Login</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>

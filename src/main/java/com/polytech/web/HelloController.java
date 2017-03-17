@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
 import java.util.List;
 
 /**
@@ -39,7 +40,8 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/share", method = RequestMethod.POST)
-    public String post(Post post){
+    public String post(Post post, Principal principal){
+        String username = principal.getName();
         //System.out.println(content);
         publicationService.post(post);
         System.out.println(post);
