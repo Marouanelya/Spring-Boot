@@ -22,7 +22,7 @@ public class HelloController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(){
-        return "forward:index.html";
+        return "forward:feed.html";
     }
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
