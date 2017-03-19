@@ -17,12 +17,12 @@ public class Main {
 
         PublicationService publicationService = applicationContext.getBean(PublicationService.class);
 
-        Post post = new Post("Luminy est cool");
+        /*Post post = new Post("Luminy est cool");
         Post post1 = new Post("Etoil");
         Post post2 = new Post("Test");
         publicationService.post(post);
         publicationService.post(post1);
-        publicationService.post(post2);
+        publicationService.post(post2);*/
 
         System.out.println(publicationService.fetchAll());
     }

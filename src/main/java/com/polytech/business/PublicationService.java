@@ -15,6 +15,10 @@ public class PublicationService {
     @Autowired
     private PostRepository postRepository;
 
+    public PublicationService(){
+
+    }
+
     public PublicationService(PostRepository postRepository){
         this.postRepository = postRepository;
     }

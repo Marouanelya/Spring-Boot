@@ -2,6 +2,7 @@ package com.polytech.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -15,6 +16,7 @@ import javax.sql.DataSource;
 @Configuration
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = {"com.polytech.repository", "com.polytech.business","com.polytech.config","com.polytech.web"})
+@EntityScan(basePackages = "com.polytech.business")
 public class ApplicationConfig {
 
     @Autowired

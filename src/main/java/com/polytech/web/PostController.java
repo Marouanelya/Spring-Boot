@@ -15,7 +15,7 @@ import java.util.List;
  * Created by dev on 3/15/17.
  */
 @Controller
-public class HelloController {
+public class PostController {
 
 
     @Autowired
@@ -42,6 +42,7 @@ public class HelloController {
     @RequestMapping(value = "/share", method = RequestMethod.POST)
     public String post(Post post, Principal principal){
         String username = principal.getName();
+        post.setUsername(username);
         //System.out.println(content);
         publicationService.post(post);
         System.out.println(post);
